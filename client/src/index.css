@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.custom-slider button.slick-next {
+  right: 63px;
+  z-index: 20;
+}
+
+.custom-slider button.slick-prev {
+  left: 20px;
+  z-index: 20;
+}
+
+.custom-slider button.slick-next::before {
+  color: gray;
+  content: "\276F";
+  background-color: #dfcdcd;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.custom-slider button.slick-prev::before {
+  color: gray;
+  content: "\276E";
+  background-color: #dfcdcd;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.image-slider button.slick-next {
+  right: 20px;
+  top: 65px;
+  z-index: 100;
+}
+
+.image-slider button.slick-prev {
+  left: 0px;
+  top: 65px;
+  z-index: 100;
+}
+
+.image-slider button.slick-next::before {
+  color: gray;
+  content: "\276F";
+  background-color: #c4a7a7;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.image-slider button.slick-prev::before {
+  color: gray;
+  content: "\276E";
+  background-color: #c4a7a7;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px;
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  /* background: grey; */
+  margin-bottom: 30px;
+}
+
+.w500 {
+  width: 500px;
+}
+
+.w110 {
+  width: 120px;
+}
+
+code {
+  white-space: initial;
+}
+
+.test {
+  height: 458px;
+  width: 458px;
+}
+
+#custom-scrollbar::-webkit-scrollbar {
+  width: 5px; /* Độ rộng của thanh cuộn */
+}
+
+#custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Màu nền của nút trượt */
+  border-radius: 5px; /* Đường viền cong của nút trượt */
+}
+
