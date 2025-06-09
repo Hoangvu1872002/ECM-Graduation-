@@ -5,20 +5,13 @@ const axios = require("axios");
 module.exports = function (io, socketBooking) {
   io.of("/orderStatus").on("connection", (socket) => {
     // console.log("New client connected: " + socket.id);
-
     socket.on("find-driver", async (data) => {
       console.log(data);
-
       try {
         const { _id, status } = data;
-
         const order = await orderModel.findById(_id);
-
-        // console.log(order);
-
         const pickupAddress = order.shippingAddress; // Điểm nhận đơn
         const deliveryAddress = order.billingAddress; // Điểm giao đơn
-
         const fetchRoute = async () => {
           try {
             const response = await axios.get(
@@ -32,20 +25,15 @@ module.exports = function (io, socketBooking) {
                 },
               }
             );
-
             const totalDistance =
               response.data.routes[0].legs[0].distance.value; // Đơn vị: mét
-            // console.log(`Tổng quãng đường: ${totalDistance} m`);
-
             return totalDistance;
           } catch (error) {
             console.error("Error fetching route:", error);
             return null;
           }
         };
-
         const totalDistance = await fetchRoute();
-
         if (totalDistance !== null) {
           // Gửi sự kiện 'find-driver' qua socketBooking
           socketBooking.emit("find-driver", {
@@ -58,7 +46,6 @@ module.exports = function (io, socketBooking) {
             averageTimeVehicleSelected: Math.ceil(totalDistance / 1000 / 30), // Ví dụ: thời gian trung bình (30 km/h)
             infCustomer: { _id: order.orderBy }, // Thông tin khách hàng
           });
-
           const response = await orderModel.findByIdAndUpdate(
             _id,
             {
@@ -66,11 +53,9 @@ module.exports = function (io, socketBooking) {
             },
             { new: true }
           );
-
           if (response) {
             io.of("/orderStatus").emit("updatedStatus");
           }
-
           console.log("Event 'find-driver' sent to socketBooking.");
         }
 

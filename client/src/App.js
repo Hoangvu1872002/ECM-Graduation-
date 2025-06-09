@@ -42,6 +42,7 @@ import { showCart } from "./store/app/appSlice";
 import io from "socket.io-client";
 import CreateDriver from "./pages/admin/CreateDriver";
 import ManageDriver from "./pages/admin/ManageDriver";
+import ChatBox from "./pages/public/ChatBox";
 
 function App() {
   const dispatch = useDispatch();
@@ -185,6 +186,7 @@ function App() {
           element={<FinalRegister></FinalRegister>}
         />
       </Routes>
+      <ChatBox />
     </div>
   );
 }
