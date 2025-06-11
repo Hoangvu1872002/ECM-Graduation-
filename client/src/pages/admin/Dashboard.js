@@ -812,7 +812,7 @@ const Dashboard = () => {
             <div className="flex-2 py-3 px-4  rounded-xl shadow-md bg-white">
               <div className="flex justify-between border-b pb-3 items-center">
                 <span className="text-main font-semibold text-xl py-[5px]">
-                  Overview 2024
+                  Overview 2025
                 </span>
               </div>
               <div className="flex flex-col h-[83%] justify-center items-center w-full mt-5 ">
@@ -913,7 +913,7 @@ const Dashboard = () => {
                       {
                         label:
                           weeklyDataPrice?.map((e) => e.title).length === 12
-                            ? "2024 revenue"
+                            ? "2025 revenue"
                             : `${statusPrice?.label} revenue`,
                         data: weeklyDataPrice?.map((e) => e.total),
                         backgroundColor: "rgb(45 212 191)",

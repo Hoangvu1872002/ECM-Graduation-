@@ -19,6 +19,7 @@ var couponsRouter = require("./routes/coupon");
 var ordersRouter = require("./routes/order");
 var insertRouter = require("./routes/insert");
 var vnpayRouter = require("./routes/vnpay");
+var shippingRouter = require("./routes/shipping");
 
 const { errorsMiddleware } = require("./middlewares/errorsMiddleware");
 const dbConnect = require("./config/database");
@@ -73,6 +74,7 @@ app.use("/coupons", couponsRouter);
 app.use("/orders", ordersRouter);
 app.use("/inserts", insertRouter);
 app.use("/vnpay", vnpayRouter);
+app.use("/shippings", shippingRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

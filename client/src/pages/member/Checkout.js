@@ -189,7 +189,7 @@ const Checkout = ({ navigate, dispatch }) => {
                     current?.mobile +
                     ")"}
                 </span>
-                <span>{current?.address?.name}</span>
+                <span>{current?.address.main_name_place}</span>
                 {/* Hiển thị thuộc tính name */}
                 <span
                   onClick={() => navigate(`/${path.MEMBER}/${path.PERSONAL}`)}
@@ -220,7 +220,7 @@ const Checkout = ({ navigate, dispatch }) => {
                     </p>
                     <p className="text-xs text-gray-500">
                       Receive a Voucher worth vnd 10,000 if your order is
-                      delivered to you after 11:59 p.m. April 17, 2024.
+                      delivered to you after 11:59 p.m. April 17, 2025.
                     </p>
                   </div>
                 </div>

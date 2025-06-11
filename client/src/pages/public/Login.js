@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { validate } from "../../ultils/helper";
 import { showModal } from "../../store/app/appSlice";
+import { getCurrent } from "../../store/users/asyncAction";
 
 const Login = () => {
   const dispath = useDispatch();
@@ -84,9 +85,14 @@ const Login = () => {
               userData: rs.userData,
             })
           );
-          searchParams.get("redirect")
-            ? navigate(searchParams.get("redirect"))
-            : navigate(`/${path.HOME}`);
+
+          if (rs.userData.role === "admin") {
+            navigate(`/admin/dashboard`);
+          } else {
+            searchParams.get("redirect")
+              ? navigate(searchParams.get("redirect"))
+              : navigate(`/${path.HOME}`);
+          }
         } else {
           Swal.fire("Oops!", rs.mes, "error");
         }

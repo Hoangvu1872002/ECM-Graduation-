@@ -93,86 +93,37 @@ const BestSeller = () => {
         ></img> */}
         <div className="max-w-[49.32%] border px-2 pt-2 pb-[2px] bg-gray-100 shadow-md rounded-lg">
           <Slider {...settings}>
-            <div className="">
+            {/* <div className="">
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/asus%20cate.jpg"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/may-tinh-bang-lenovo-idea-tab-pro-kem-but-ban-phim-cate.png"
                 alt="banner1"
                 className="object-cover"
               />
-            </div>
+            </div> */}
             <div>
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/Laptop%20MSI%20Modern_cate%20(1).jpg"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/may-tinh-bang-teclast-m50-plus-smem.jpg"
                 alt="banner"
                 className="object-cover"
               />
             </div>
             <div>
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/Asus_cate.2.jpg"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/may-tinh-bang-xiaomi-pad-7-pro-smem.jpg"
                 alt="banner"
                 className="object-cover"
               />
             </div>
             <div>
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/acer%20spin.jpg"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/pad-se-tet-gia-moi.png"
                 alt="banner2"
                 className="object-cover"
               />
             </div>
             <div>
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/matebook%20d15.jpg"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/loq%20cate.jpg"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/yoga%20duet.jpg"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/tuf%20f15.jpg"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/officee.jpg"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/intelcoreultra.png"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/intel%20gen%2013.png"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/intel%20evo.png"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/Pad-7-Pro-cate.jpg"
                 alt="banner1"
                 className="object-cover"
               />
@@ -183,88 +134,39 @@ const BestSeller = () => {
           <Slider {...settings}>
             <div className="">
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/nokia-t21-cate-th4.jpg"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/Pad-7-cate.jpg"
                 alt="banner1"
                 className="object-cover"
               />
             </div>
             <div>
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/ipad-gen10-cate-thang14.png"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/ipad-a16-t6.png"
                 alt="banner"
                 className="object-cover"
               />
             </div>
             <div>
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/ipad-pro-cate-th4.jpg"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/may-tinh-bang-xiaomi-pad-7-pro-smem.jpg"
                 alt="banner"
                 className="object-cover"
               />
             </div>
-            <div>
+            <div className="">
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/may-tinh-bang-masstel-tab-10-1-pro-cate.jpg"
-                alt="banner2"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/mi-pad6-series-cate-th4.jpg"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/may-tinh-bang-lenovo-idea-tab-pro-kem-but-ban-phim-cate.png"
                 alt="banner1"
                 className="object-cover"
               />
             </div>
-            <div>
+            {/* <div>
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/Galaxy-Tab-S9-Ultra.png"
-                alt="banner1"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/may-tinh-bang-teclast-m50-plus-smem.jpg"
+                alt="banner"
                 className="object-cover"
               />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/redmi-pad-se.png"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/Galaxy-Tab-S9-FE-5g-6gb-128gb.png"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/Galaxy-Tab-S9-FE-Plus-WIFI-12GB-256GB.png"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/ipad-air-m1-cate-th4.jpg"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/lenovo-m11-cate-th4-ban2.jpg"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:100/q:80/plain/https://dashboard.cellphones.com.vn/storage/lenovo-m8-cate-th4.jpg"
-                alt="banner1"
-                className="object-cover"
-              />
-            </div>
+            </div> */}
           </Slider>
         </div>
       </div>

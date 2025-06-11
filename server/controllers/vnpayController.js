@@ -33,8 +33,7 @@ const createVnpayOrder = asyncHandler(async (req, res) => {
   let tmnCode = "TN44ADZK";
   let secretKey = "BEBLNQOQOJXNTUDOHMIBPAHSXQVHPWHK";
   let vnpUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-  let returnUrl =
-    "https://hoangvux-be-ecommerce.onrender.com/vnpay/vnpay_return";
+  let returnUrl = "http://localhost:5001/vnpay/vnpay_return";
 
   var date = new Date();
 
@@ -113,9 +112,9 @@ const vnpayReturn = asyncHandler(async (req, res) => {
 
   const code = Number(vnp_Params.vnp_ResponseCode);
   if (code === 0) {
-    res.redirect("https://hoangvux-fe-ecommerce.netlify.app/success");
+    res.redirect("http://localhost:3000/success");
   } else {
-    res.redirect("https://hoangvux-fe-ecommerce.netlify.app");
+    res.redirect("http://localhost:3000");
   }
 });
 

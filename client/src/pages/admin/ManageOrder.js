@@ -311,14 +311,14 @@ const ManageOrder = ({
               ))}
             </div>
 
-            <div className="flex justify-between items-center py-1 px-4 border-t border-dashed mt-[1px] bg-gray-50">
+            {/* <div className="flex justify-between items-center py-1 px-4 border-t border-dashed mt-[1px] bg-gray-50">
               <span>
                 <span className="text-sm text-red-500">Transport fee</span>
               </span>
               <span className="text-sm text-red-500">
                 {`${formatMoney(el?.transportFee)} vnd`}
               </span>
-            </div>
+            </div> */}
 
             <div className="flex justify-between items-center py-1 px-4 border-t border-dashed mt-[1px] bg-gray-50">
               <span>

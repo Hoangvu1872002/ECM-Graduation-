@@ -273,6 +273,13 @@ export const adminSidebar = [
     icon: <RiBillLine size={20}></RiBillLine>,
   },
   {
+    id: 8,
+    type: "SINGLE",
+    text: "Manage shipping",
+    path: `/${path.ADMIN}/${path.MANAGE_SHIPPING}`,
+    icon: <RiBillLine size={20}></RiBillLine>,
+  },
+  {
     id: 5,
     type: "PARENT",
     text: "Manage blogs",
@@ -410,6 +417,25 @@ export const statusOrders = [
   {
     label: "Successed",
     value: "Successed",
+  },
+];
+
+export const statusShipping = [
+  {
+    label: "RECEIVED",
+    value: "RECEIVED",
+  },
+  {
+    label: "PENDING",
+    value: "PENDING",
+  },
+  {
+    label: "COMPLETED",
+    value: "COMPLETED",
+  },
+  {
+    label: "CANCELED",
+    value: "CANCELED",
   },
 ];
 

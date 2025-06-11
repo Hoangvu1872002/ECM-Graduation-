@@ -5,12 +5,16 @@ import { NavLink, Link } from "react-router-dom";
 import clsx from "clsx";
 import icons from "../../ultils/icons";
 import Button from "../buttons/Button";
+import { logout } from "../../store/users/userSlide";
+import { useDispatch } from "react-redux";
+import path from "../../ultils/path";
 
 const activedStyle = "px-4 py-2 flex items-center gap-2 bg-blue-400";
 const notActivedStyle = "px-4 py-2 flex items-center gap-2  hover:bg-blue-100";
 
 const AdminSidebar = () => {
   const { IoIosArrowDown, IoIosArrowForward, FaBackward } = icons;
+  const dispatch = useDispatch();
 
   const [actived, setActived] = useState([]);
 
@@ -87,11 +91,15 @@ const AdminSidebar = () => {
           ))}
         </div>
       </div>
-      <NavLink to={"/"} className="pl-4">
+      <NavLink
+        onClick={() => dispatch(logout({}))}
+        to={`/${path.LOGIN}`}
+        className="pl-4"
+      >
         <Button>
           <div className="flex justify-center items-center gap-2">
             <FaBackward></FaBackward>
-            <span>Back</span>
+            <span>Logout</span>
           </div>
         </Button>
       </NavLink>

@@ -1,6 +1,6 @@
 import path from "./ultils/path";
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import {
   Blog,
   DetailProduct,
@@ -43,12 +43,15 @@ import io from "socket.io-client";
 import CreateDriver from "./pages/admin/CreateDriver";
 import ManageDriver from "./pages/admin/ManageDriver";
 import ChatBox from "./pages/public/ChatBox";
+import ManagerShipping from "./pages/admin/ManagerShipping";
 
 function App() {
   const dispatch = useDispatch();
   const { isShowModal, modalChildren, isShowCart } = useSelector(
     (state) => state.app
   );
+  const { current } = useSelector((state) => state.user);
+  // console.log(current);
 
   const [resetHistoryOrder, setResetHistoryOrder] = useState(false);
 
@@ -77,6 +80,21 @@ function App() {
     socket.emit("find-driver", statusOrder);
   };
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    // console.log(current);
+
+    if (current) {
+      if (current.role === "admin" && location.pathname === "/") {
+        navigate(`/admin/dashboard`);
+      } else if (current.role !== "admin" && location.pathname === "/") {
+        navigate(path.HOME);
+      }
+    }
+  }, [current]);
+
   useEffect(() => {
     dispatch(getCategories());
   }, []);
@@ -97,8 +115,8 @@ function App() {
           element={<CrOrderVNpay></CrOrderVNpay>}
         />
         <Route path={path.PUBLIC} element={<Public></Public>}>
-          <Route path={path.HOME} element={<Home></Home>} />
           <Route path={path.BLOGS} element={<Blog></Blog>} />
+          <Route path={path.HOME} element={<Home></Home>} />
           <Route
             path={path.DETAIL_PRODUCT_CATEGORY_PID__TITLE}
             element={<DetailProduct></DetailProduct>}
@@ -134,6 +152,15 @@ function App() {
                 handleFindDriver={handleFindDriver}
                 resetHistoryOrder={resetHistoryOrder}
               ></ManageOrder>
+            }
+          ></Route>
+          <Route
+            path={path.MANAGE_SHIPPING}
+            element={
+              <ManagerShipping
+                handleUpdateStatusOrder={handleUpdateStatusOrder}
+                resetHistoryOrder={resetHistoryOrder}
+              ></ManagerShipping>
             }
           ></Route>
           <Route
@@ -186,7 +213,7 @@ function App() {
           element={<FinalRegister></FinalRegister>}
         />
       </Routes>
-      <ChatBox />
+      {current?.role !== "admin" && <ChatBox />}
     </div>
   );
 }

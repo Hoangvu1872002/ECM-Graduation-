@@ -15,6 +15,7 @@ export const userSlide = createSlice({
     login: (state, action) => {
       state.isLoggedIn = action.payload.isLoggedIn;
       state.token = action.payload.token;
+      state.current = action.payload.userData;
     },
     logout: (state, action) => {
       state.isLoggedIn = false;
@@ -22,7 +23,7 @@ export const userSlide = createSlice({
       state.token = null;
       state.isLoading = false;
       state.mes = "";
-      state.currentCart = null
+      state.currentCart = null;
     },
     clearMessage: (state) => {
       state.mes = "";

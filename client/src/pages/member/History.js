@@ -464,7 +464,7 @@ const History = ({ handleUpdateStatusOrder, resetHistoryOrder, dispatch }) => {
                     </p>
                     <p className="text-xs text-gray-500 pr-[150px]">
                       Receive a Voucher worth vnd 10,000 if your order is
-                      delivered to you after 11:59 p.m. April 17, 2024.
+                      delivered to you after 11:59 p.m. April 17, 2025.
                     </p>
                   </div>
                 </div>

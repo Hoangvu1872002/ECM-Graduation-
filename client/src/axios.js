@@ -10,6 +10,8 @@ instance.interceptors.request.use(
     // Làm gì đó trước khi request dược gửi đi
     let localStorageData = window.localStorage.getItem("persist:shop/user");
 
+    // console.log("localStorageData", localStorageData);
+
     if (localStorageData && typeof localStorageData === "string") {
       localStorageData = JSON.parse(localStorageData);
       const accessToken = JSON.parse(localStorageData?.token);

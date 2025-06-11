@@ -45,13 +45,13 @@ const Banner = () => {
                 className=" h-[381.8px] w-full object-cover "
               />
             </div>
-            <div>
+            {/* <div>
               <img
-                src="https://img.lovepik.com/bg/20240421/Vibrant-Autumn-Online-Shopping-Captivating-3D-Illustration-with-Smartphone-Bags_6937733_wh860.jpg!/fw/860"
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/deal-km-b2s-2025.jpg"
                 alt="banner1"
                 className=" h-[381.8px] w-full object-cover "
               />
-            </div>
+            </div> */}
           </Slider>
         </div>
         <div className="shadow-md rounded-lg">
@@ -72,14 +72,14 @@ const Banner = () => {
         </span>
         <span>
           <img
-            src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/right-banner-ipad-th444.jpg"
+            src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/mac-home.png"
             alt="banner"
             className=" w-full object-cover shadow-md rounded-lg "
           />
         </span>
         <span>
           <img
-            src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/uu-dai-vppay-apple-080324%20(2).png"
+            src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/gian-hang-samsung-home.png"
             alt="banner"
             className=" w-full object-cover shadow-md rounded-lg "
           />
@@ -93,7 +93,7 @@ const Banner = () => {
         </span>
         <span>
           <img
-            src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/right%20sv.png"
+            src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/hsbc-home.jpg"
             alt="banner"
             className=" w-full object-cover shadow-md rounded-lg "
           />

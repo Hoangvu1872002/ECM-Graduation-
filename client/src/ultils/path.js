@@ -23,6 +23,7 @@ const path = {
   CREATE_DRIVER: "create-driver",
   MANAGE_DRIVER: "manage-driver",
   MANAGE_ORDER: "manage-order",
+  MANAGE_SHIPPING: "manage-shipping",
   CREATE_PRODUCTS: "create-products",
   CREATE_BLOGS: "create-blogs",
   MANAGE_BLOGS: "manage-blogs",

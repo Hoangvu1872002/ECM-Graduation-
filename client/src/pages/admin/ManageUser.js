@@ -248,7 +248,7 @@ const ManageUser = () => {
                         }}
                       ></InputForm>
                     ) : (
-                      <span>{e.address.name}</span>
+                      <span>{e.address?.main_name_place}</span>
                     )}
                   </td>
                   <td className="px-1 py-2">
