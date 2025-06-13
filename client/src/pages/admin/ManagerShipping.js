@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import useDebounce from "../../hooks/useDebounce";
 import { useForm } from "react-hook-form";
-import { apiGetAdminShippings } from "../../apis";
+import { apiGetAdminShippings, apiGetAllShippings } from "../../apis";
 import moment from "moment";
 import { Doughnut } from "react-chartjs-2";
 import { useSelector } from "react-redux";
@@ -17,6 +17,8 @@ import { useSelector } from "react-redux";
 export default function ManagerShipping(resetHistoryOrder) {
   const [orders, setOrders] = useState([]);
   const [count, setCout] = useState(0);
+  const [ordersAll, setOrdersAll] = useState([]);
+  const [countAll, setCoutAll] = useState(0);
   const titleRef = useRef();
   const [params] = useSearchParams();
   const navigate = useNavigate();
@@ -49,6 +51,18 @@ export default function ManagerShipping(resetHistoryOrder) {
       setOrders([]);
     }
   };
+  const fetchAll = async (params) => {
+    const response = await apiGetAllShippings();
+    console.log(response);
+
+    if (response.success) {
+      setCoutAll(response.counts);
+      setOrdersAll(response.bills);
+    } else {
+      setCoutAll(0);
+      setOrdersAll([]);
+    }
+  };
 
   const statusCounts = orders.reduce((acc, order) => {
     acc[order.status] = (acc[order.status] || 0) + 1;
@@ -60,30 +74,30 @@ export default function ManagerShipping(resetHistoryOrder) {
   const shippingCount = statusCounts["SHIPPING"] || 0;
   const pendingCount = statusCounts["PENDING"] || 0;
 
-  // const doughnutData = {
-  //   labels: ["Completed", "Canceled", "Shipping", "Pending"],
-  //   datasets: [
-  //     {
-  //       data: [completedCount, canceledCount, shippingCount, pendingCount],
-  //       backgroundColor: [
-  //         "#4ade80", // light green
-  //         "#60a5fa", // light blue
-  //         "#facc15", // light yellow
-  //         "#a3a3a3", // light gray
-  //       ],
-  //       borderWidth: 2,
-  //     },
-  //   ],
-  // };
+  // Thay vì dùng orders, hãy dùng ordersAll cho biểu đồ tổng
+  const statusCountsAll = ordersAll.reduce((acc, order) => {
+    acc[order.status] = (acc[order.status] || 0) + 1;
+    return acc;
+  }, {});
+
+  const completedCountAll = statusCountsAll["COMPLETED"] || 0;
+  const canceledCountAll = statusCountsAll["CANCELED"] || 0;
+  const shippingCountAll = statusCountsAll["SHIPPING"] || 0;
+  const pendingCountAll = statusCountsAll["PENDING"] || 0;
 
   // Total orders
   const totalOrders = orders.length;
+  const totalOrdersAll = ordersAll.length;
 
   // Total revenue (only completed orders)
   const totalRevenue = current?.balence || 0;
 
   const percentCompleted =
     totalOrders > 0 ? Math.round((completedCount / totalOrders) * 100) : 0;
+  const percentCompletedAll =
+    totalOrdersAll > 0
+      ? Math.round((completedCountAll / totalOrdersAll) * 100)
+      : 0;
 
   useEffect(() => {
     if (status) {
@@ -120,6 +134,10 @@ export default function ManagerShipping(resetHistoryOrder) {
       });
   }, [queryDebounce]);
 
+  useEffect(() => {
+    fetchAll();
+  }, []);
+
   return (
     <div ref={titleRef} className="relative w-full flex flex-col mb-[100px]">
       <h1 className="fixed z-50 bg-gray-100 w-full h-[75px] flex justify-between items-center text-3xl font-bold px-5 border-b">
@@ -137,10 +155,10 @@ export default function ManagerShipping(resetHistoryOrder) {
                   datasets: [
                     {
                       data: [
-                        completedCount,
-                        canceledCount,
-                        shippingCount,
-                        pendingCount,
+                        completedCountAll,
+                        canceledCountAll,
+                        shippingCountAll,
+                        pendingCountAll,
                       ],
                       backgroundColor: [
                         "#4ade80", // xanh lá nhạt
@@ -159,25 +177,25 @@ export default function ManagerShipping(resetHistoryOrder) {
               />
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <span className="text-xl font-bold text-green-600">
-                  {percentCompleted}%
+                  {percentCompletedAll}%
                 </span>
               </div>
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-blue-600">
-                {totalOrders}
+                {totalOrdersAll}
               </span>
               <span className="text-xs text-gray-500">Total orders</span>
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-orange-500">
-                {totalRevenue.toLocaleString("en-US")} đ
+                {totalRevenue.toLocaleString("en-US")} $
               </span>
               <span className="text-xs text-gray-500">Total revenue</span>
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-green-600">
-                {completedCount}
+                {completedCountAll}
               </span>
               <span className="text-xs text-gray-500">Completed orders</span>
             </div>

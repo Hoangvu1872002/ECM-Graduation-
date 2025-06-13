@@ -98,7 +98,7 @@ const ManageDriver = () => {
         </div>
       )}
       <h1 className="fixed z-10 bg-gray-100 w-full h-[75px] flex justify-between items-center text-3xl font-bold px-5 border-b">
-        <span>Manage Products</span>
+        <span>Manage Drivers</span>
       </h1>
       <div className="h-[75px] w-full"></div>
       <div className="flex w-full justify-end items-center px-5">

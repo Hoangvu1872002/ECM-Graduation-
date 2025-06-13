@@ -6,3 +6,9 @@ export const apiGetAdminShippings = (params) =>
     method: "get",
     params,
   });
+
+export const apiGetAllShippings = () =>
+  axios({
+    url: "/shippings/admin/all",
+    method: "get",
+  });
